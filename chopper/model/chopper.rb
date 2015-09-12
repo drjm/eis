@@ -6,4 +6,8 @@ class Chopper
 		end
 		return i
 	end
+
+	def sum(listaXs)
+		"vacio"
+	end
 end
