@@ -36,5 +36,8 @@ class Chopper
 		if print_s == "8"
 			return "ocho"
 		end
+		if print_s == "9"
+			return "nueve"
+		end
 	end
 end
