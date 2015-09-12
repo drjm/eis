@@ -10,12 +10,16 @@ class Chopper
 	def sum(listaXs)
 		n = listaXs.inject(0) {|sum, i|  sum + i }
 		s = n.to_s
-		if n>9			
-			s1 = s[0]
-			s2 = s[1]
-			print_string(s1) <<","<< print_string(s2)
+		if n > 99
+			return "demasiado grande"
 		else
-			print_string(s)
+			if n>9			
+				s1 = s[0]
+				s2 = s[1]
+				print_string(s1) <<","<< print_string(s2)
+			else
+				print_string(s)
+			end
 		end
 	end
 
