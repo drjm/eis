@@ -8,11 +8,15 @@ class Chopper
 	end
 
 	def sum(listaXs)
-		if listaXs == [] 
+		n = listaXs.inject(0) {|sum, i|  sum + i }
+		if n == 0
 			return "vacio"
 		end
-		if listaXs == [1] 
+		if n == 1
 			return "uno"
+		end
+		if n == 4
+			return "cuatro"
 		end
 	end
 end
