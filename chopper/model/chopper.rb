@@ -9,14 +9,28 @@ class Chopper
 
 	def sum(listaXs)
 		n = listaXs.inject(0) {|sum, i|  sum + i }
-		if n == 0
+		s = n.to_s
+		if n>9			
+			s1 = s[0]
+			s2 = s[1]
+			print_string(s1) <<","<< print_string(s2)
+		else
+			print_string(s)
+		end
+	end
+
+	def print_string(print_s)
+		if print_s == "0"
 			return "vacio"
 		end
-		if n == 1
+		if print_s == "1"
 			return "uno"
 		end
-		if n == 4
+		if print_s == "4"
 			return "cuatro"
+		end
+		if print_s == "8"
+			return "ocho"
 		end
 	end
 end
