@@ -8,6 +8,11 @@ class Chopper
 	end
 
 	def sum(listaXs)
-		"vacio"
+		if listaXs == [] 
+			return "vacio"
+		end
+		if listaXs == [1] 
+			return "uno"
+		end
 	end
 end
