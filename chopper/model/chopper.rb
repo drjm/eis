@@ -18,14 +18,18 @@ class Chopper
 				s2 = s[1]
 				print_string(s1) <<","<< print_string(s2)
 			else
-				print_string(s)
+				if listaXs == []
+					return "vacio"
+				else
+					print_string(s)
+				end
 			end
 		end
 	end
 
 	def print_string(print_s)
 		if print_s == "0"
-			return "vacio"
+			return "cero"
 		end
 		if print_s == "1"
 			return "uno"
