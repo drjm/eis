@@ -28,19 +28,18 @@ class Chopper
 	end
 
 	def print_string(print_s)
-		if print_s == "0"
+		case 
+		when print_s == "0"
 			return "cero"
-		end
-		if print_s == "1"
+		when print_s == "1"
 			return "uno"
-		end
-		if print_s == "4"
+		when print_s == "4"
 			return "cuatro"
-		end
-		if print_s == "8"
+		when print_s == "5"
+			return "cinco"
+		when print_s == "8"
 			return "ocho"
-		end
-		if print_s == "9"
+		when print_s == "9"
 			return "nueve"
 		end
 	end
