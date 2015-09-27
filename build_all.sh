@@ -7,5 +7,9 @@ cd ..
 cd chopper
 bundle install
 bundle exec rake
+cd piedra-papel-tijera
+bundle install
+bundle exec rake
+
 
 
