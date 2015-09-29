@@ -1,12 +1,15 @@
 require 'rspec' 
 require_relative '../model/juego'
+require_relative '../model/papel'
+require_relative '../model/piedra'
+require_relative '../model/jugador'
 
 
 describe 'juego' do
 
 	let(:juego) { Juego.new}  
 
-=begin
+
 
 	it '
 		test 1: 
@@ -19,6 +22,8 @@ describe 'juego' do
 		jugador2.jugarPapel()
 		expect(juego.jugarRonda(jugador1, jugador2)).to eq 'jugador2 gana'
 	end
+
+=begin
 
 		it '
 		test 1: 
