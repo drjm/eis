@@ -37,7 +37,7 @@ describe 'juego' do
 		expect(juego.jugarRonda(jugador1, jugador2)).to eq 'jugador1 gana'
 	end
 
-=begin
+
 
 	it '
 		test 1: 
@@ -50,6 +50,8 @@ describe 'juego' do
 		jugador2.jugarPiedra()
 		expect(juego.jugarRonda(jugador1, jugador2)).to eq 'empate'
 	end
+
+=begin
 
 
 	it '
