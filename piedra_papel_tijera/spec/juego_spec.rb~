@@ -1,5 +1,8 @@
 require 'rspec' 
 require_relative '../model/juego'
+require_relative '../model/piedra'
+require_relative '../model/papel'
+require_relative '../model/jugador'
 
 
 describe 'juego' do
