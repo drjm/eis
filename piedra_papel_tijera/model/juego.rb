@@ -36,8 +36,6 @@ class Juego
 			end
  			n +=1
 		end
-		puts "resultado"
-		puts resultado
 		imprimirResultadoPartida(resultado)
 	end 
 
