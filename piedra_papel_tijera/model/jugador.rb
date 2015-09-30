@@ -4,7 +4,7 @@ require_relative '../model/papel'
 class Jugador
 	def initialize()  
     	# atributos   
-    	@jugadas = []  
+    	@jugadas = Array.new
   	end
 
   	def jugarPiedra
@@ -13,11 +13,17 @@ class Jugador
   	end
 
  	def jugarPapel
- 		papel = Papel.new
-  		@jugadas[0]=papel
+ 		  papel = Papel.new
+      @jugadas[0]=papel
   	end
 
-  	def getJugadas(n)
+  def agregarJugada(jugada)
+    (@jugadas).push( jugada )
+    #fijate como hacer append en el array!
+  end
+
+  	def getJugada(n)
   		return @jugadas[n]
   	end
+
 end

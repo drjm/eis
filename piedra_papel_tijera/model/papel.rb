@@ -11,6 +11,6 @@ class Papel < Rol
   end
 
   def pierdoCon(rol)
-  	rol.pierdoConPapel
+  	return rol.pierdoConPapel
   end
 end
