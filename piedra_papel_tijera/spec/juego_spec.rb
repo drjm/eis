@@ -10,7 +10,6 @@ describe 'juego' do
 	let(:juego) { Juego.new}  
 
 
-
 	it '
 		test 1: 
 		jugador1 juega piedra
@@ -67,7 +66,7 @@ describe 'juego' do
 		expect(juego.jugarPartida(jugador1, jugador2)).to eq 'jugador1 gana'
 	end
 
-=begin
+
 		
 	it '
 		test 5: 
@@ -99,19 +98,20 @@ describe 'juego' do
 		papel = Papel.new
 		mono = Mono.new
 		jugador1 = Jugador.new
-		jugador1.agregarJugada(piedra)
+		jugador1.agregarJugada(papel)
+		jugador1.agregarJugada(papel)
 		jugador1.agregarJugada(mono)
-		jugador1.agregarJugada(tijera)
 		jugador2 = Jugador.new
 		jugador2.agregarJugada(tijera)
-		jugador2.agregarJugada(papel)
-		jugador2.agregarJugada(piedra)
+		jugador2.agregarJugada(mono)
+		jugador2.agregarJugada(mono)
 		expect(juego.jugarPartida(jugador1, jugador2)).to eq 'jugador2 gana'
 	end
 
+
 	it '
 		test 7: 
-		Empate
+		Empate' do
 		mono = Mono.new
 		jugador1 = Jugador.new
 		jugador1.agregarJugada(mono)
@@ -120,11 +120,26 @@ describe 'juego' do
 		jugador2 = Jugador.new
 		jugador2.agregarJugada(mono)
 		jugador2.agregarJugada(mono)
-		jugador2.agregarJugada(mono)
+		jugador2.agregarJugada(mono) 
 		expect(juego.jugarPartida(jugador1, jugador2)).to eq 'empate'
 	end
-	
-=end
 
+	it '
+		test 8: 
+		Empate' do
+		mono = Mono.new
+		tijera = Tijera.new
+		papel = Papel.new
+		piedra = Piedra.new
+		jugador1 = Jugador.new
+		jugador1.agregarJugada(mono)
+		jugador1.agregarJugada(tijera)
+		jugador1.agregarJugada(papel)
+		jugador2 = Jugador.new
+		jugador2.agregarJugada(papel)
+		jugador2.agregarJugada(piedra)
+		jugador2.agregarJugada(mono) 
+		expect(juego.jugarPartida(jugador1, jugador2)).to eq 'jugador2 gana'
+	end
 
 end

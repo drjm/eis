@@ -1,26 +1,26 @@
 require_relative '../model/rol'
+require_relative '../model/papel'
 require_relative '../model/piedra'
-require_relative '../model/tijera'
 require_relative '../model/mono'
 
-class Papel < Rol
+class Tijera < Rol
   def pierdoConPiedra
-  	return true
+    return false
   end
  
   def pierdoConPapel
-  	return nil
+    return true
   end
 
   def pierdoConMono
-  	return false
+    return nil
   end
 
   def pierdoConTijera
-  	return false
+    return nil
   end
 
   def pierdoCon(rol)
-  	return rol.pierdoConPapel
+    return rol.pierdoConTijera
   end
 end

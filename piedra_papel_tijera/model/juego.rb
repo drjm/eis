@@ -36,6 +36,8 @@ class Juego
 			end
  			n +=1
 		end
+		puts "resultado"
+		puts resultado
 		imprimirResultadoPartida(resultado)
 	end 
 
@@ -43,7 +45,7 @@ class Juego
 		case 
 		when (res > 0)
 			return "jugador2 gana"
-		when (res < 1)
+		when (res < 0)
 			return "jugador1 gana"
 		when (0 == res)
 			return "empate"
