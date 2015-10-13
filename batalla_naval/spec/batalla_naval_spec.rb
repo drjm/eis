@@ -8,10 +8,35 @@ describe 'Batalla_naval' do
 it 'deberia poner destructor en pos 1,1' do
   batalla = Batalla_naval.new
   batalla.poner_barco(1, 1, "destructor", "vertical")
+  expect(batalla.get_tablero[[1,0]]).to eq "libre"
   expect(batalla.get_tablero[[1,1]]).to eq "ocupado"
   expect(batalla.get_tablero[[1,2]]).to eq "ocupado"
   expect(batalla.get_tablero[[1,3]]).to eq "ocupado"
+  expect(batalla.get_tablero[[1,4]]).to eq "libre"
 end
+
+
+it 'deberia poner destructor en pos 1,1' do
+  batalla = Batalla_naval.new
+  batalla.poner_barco(1, 1, "destructor", "horizontal")
+  expect(batalla.get_tablero[[0,1]]).to eq "libre"
+  expect(batalla.get_tablero[[1,1]]).to eq "ocupado"
+  expect(batalla.get_tablero[[2,1]]).to eq "ocupado"
+  expect(batalla.get_tablero[[3,1]]).to eq "ocupado"
+  expect(batalla.get_tablero[[4,1]]).to eq "libre"
+end
+=begin
+it 'deberia poner destructor en pos 1,1' do
+  batalla = Batalla_naval.new
+  batalla.poner_barco(1, 1, "submarino", "horizontal")
+  expect(batalla.get_tablero[[0,1]]).to eq "libre"
+  expect(batalla.get_tablero[[1,1]]).to eq "ocupado"
+  expect(batalla.get_tablero[[2,1]]).to eq "libre"
+  expect(batalla.get_tablero[[3,1]]).to eq "libre"
+  expect(batalla.get_tablero[[4,1]]).to eq "libre"
+end
+=end
+
 
 it 'No se puede ubicar un barco en una posición ya ocupada' do
   batalla = Batalla_naval.new
@@ -23,6 +48,7 @@ it 'No puedo ubicar mi barco en una posición fuera del tablero' do
   batalla = Batalla_naval.new
   expect{batalla.poner_barco(6, 6, "destructor", "horizontal")}.to raise_error('posicion fuera del tablero')
 end
+
 
 end
 

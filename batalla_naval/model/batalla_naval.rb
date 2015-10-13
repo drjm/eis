@@ -12,15 +12,39 @@ class Batalla_naval
 
   def poner_barco(posX, posY, tipo_b, dir)
     if puedo_ubicar_barco(posX, posY, tipo_b, dir)
-      if tipo_b == "destructor" and dir == "vertical" 
-  	    @tablero.ocupar_celda(1,1)
-  	    @tablero.ocupar_celda(1,2)
-        @tablero.ocupar_celda(1,3)
+      if dir == "vertical" 
+  	    poner_barco_vertical(posX, posY, tipo_b)
+      else 
+        poner_barco_horizontal(posX, posY, tipo_b)
       end
     else
       raise 'posición ya ocupada'
     end
   end
+
+  def poner_barco_horizontal(posX, posY, tipo_b)
+    tamanio = tamanio_barco(tipo_b)
+      for i in 0..4
+      #tengo que iterar eficientemente
+      if (posX <= i) and ( i < posX+tamanio)
+         @tablero.ocupar_celda(i, posY)
+      end
+      #horrible mejorar!!
+    end
+  end
+
+  def poner_barco_vertical(posX, posY, tipo_b)
+    tamanio = tamanio_barco(tipo_b)
+    for i in 0..4
+      #tengo que iterar eficientemente
+      if (posY <= i) and ( i < posY+tamanio)
+        @tablero.ocupar_celda(posX, i)
+      end
+         #horrible mejorar!!
+    end
+  end
+
+  
 
 #por ahora si digo horizontal es para arriba y vertical para la derecha
   def puedo_ubicar_barco(posX, posY, tipo_b, dir)
@@ -47,7 +71,7 @@ class Batalla_naval
     tamanio = tamanio_barco(tipo_b)
     for i in posX..4
      #tengo que iterar eficientemente
-      if (posX <= i) and (i <= posX+tamanio)
+      if (posX <= i) and (i < posX+tamanio)
         f = @tablero.get_pos(i, posY) 
           if f == "ocupado"
            return false
@@ -61,7 +85,7 @@ class Batalla_naval
     tamanio = tamanio_barco(tipo_b)
     for i in posY..4
       #tengo que iterar eficientemente
-      if (posY<=i) and ( i <=posY+tamanio)
+      if (posY<=i) and ( i <posY+tamanio)
         f = @tablero.get_pos(posX, i) 
           if f == "ocupado"
               return false
