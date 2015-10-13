@@ -25,7 +25,7 @@ it 'deberia poner destructor en pos 1,1' do
   expect(batalla.get_tablero[[3,1]]).to eq "ocupado"
   expect(batalla.get_tablero[[4,1]]).to eq "libre"
 end
-=begin
+
 it 'deberia poner destructor en pos 1,1' do
   batalla = Batalla_naval.new
   batalla.poner_barco(1, 1, "submarino", "horizontal")
@@ -35,7 +35,7 @@ it 'deberia poner destructor en pos 1,1' do
   expect(batalla.get_tablero[[3,1]]).to eq "libre"
   expect(batalla.get_tablero[[4,1]]).to eq "libre"
 end
-=end
+
 
 
 it 'No se puede ubicar un barco en una posición ya ocupada' do
