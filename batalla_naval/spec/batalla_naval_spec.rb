@@ -62,13 +62,13 @@ it 'disparo y toco agua' do
   batalla = Batalla_naval.new
   expect(batalla.disparar(1,1)).to eq "agua"
 end
-=begin
+
 it 'disparo y toco un barco pero no lo hundo' do
   batalla = Batalla_naval.new
   batalla.poner_barco(1, 1, "destructor", "horizontal")
-  expect{batalla.disparar(1,1)}.to eq "acierto"
+  expect(batalla.disparar(1,1)).to eq "acierto"
 end
-
+=begin
 it 'disparo y hundo un barco' do
   batalla = Batalla_naval.new
   batalla.poner_barco(1, 1, "submarino", "horizontal")

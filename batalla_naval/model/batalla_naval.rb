@@ -25,6 +25,9 @@ class Batalla_naval
   def disparar(posX, posY)
     if @tablero.get_tablero[[posX, posY]] == "libre"
       return "agua"
+    else
+      @tablero.get_tablero[[posX, posY]] = "libre"
+      return "acierto"
     end
   end 
 
