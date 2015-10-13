@@ -18,12 +18,12 @@ it 'No se puede ubicar un barco en una posición ya ocupada' do
   batalla.poner_barco(1, 1, "destructor", "vertical")
   expect{batalla.poner_barco(1, 1, "destructor", "vertical")}.to raise_error('posición ya ocupada')
 end
-=begin
+
 it 'No puedo ubicar mi barco en una posición fuera del tablero' do
   batalla = Batalla_naval.new
   expect{batalla.poner_barco(6, 6, "destructor", "horizontal")}.to raise_error('posicion fuera del tablero')
 end
-=end
+
 end
 
 

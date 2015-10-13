@@ -4,7 +4,6 @@ class Batalla_naval
 
   def initialize()
     @tablero = Tablero.new
-
   end
 
   def get_tablero()
@@ -27,8 +26,18 @@ class Batalla_naval
   def puedo_ubicar_barco(posX, posY, tipo_b, dir)
     flag_h = true
       if(dir == "horizontal")
+        tamanio = tamanio_barco(tipo_b)
+        #delegar en otro metodo
+        if (posX+tamanio) > 4
+          raise "posicion fuera del tablero"
+        end 
         flag_h = puedo_poner_horizontal(posX, posY, tipo_b)
       else
+        tamanio = tamanio_barco(tipo_b)
+        #delegar en otro metodo
+        if (posY+tamanio) > 4
+          raise "posicion fuera del tablero"
+        end 
         flag_h = puedo_poner_vertical(posX, posY, tipo_b)
       end 
     return flag_h
