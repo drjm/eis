@@ -57,12 +57,12 @@ it 'No puedo ubicar mi barco en una posición fuera del tablero' do
   expect{batalla.poner_barco(6, 6, "destructor", "horizontal")}.to raise_error('posicion fuera del tablero')
 end
 
-=begin
+
 it 'disparo y toco agua' do
   batalla = Batalla_naval.new
   expect(batalla.disparar(1,1)).to eq "agua"
 end
-
+=begin
 it 'disparo y toco un barco pero no lo hundo' do
   batalla = Batalla_naval.new
   batalla.poner_barco(1, 1, "destructor", "horizontal")

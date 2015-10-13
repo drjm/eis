@@ -22,6 +22,12 @@ class Batalla_naval
     end
   end
 
+  def disparar(posX, posY)
+    if @tablero.get_tablero[[posX, posY]] == "libre"
+      return "agua"
+    end
+  end 
+
   def poner_barco_horizontal(posX, posY, tipo_b)
     tamanio = tamanio_barco(tipo_b)
       for i in 0..4
