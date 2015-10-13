@@ -44,8 +44,6 @@ class Batalla_naval
     end
   end
 
-  
-
 #por ahora si digo horizontal es para arriba y vertical para la derecha
   def puedo_ubicar_barco(posX, posY, tipo_b, dir)
     flag_h = true
