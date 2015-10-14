@@ -4,10 +4,15 @@ class Batalla_naval
 
   def initialize()
     @tablero = Tablero.new
+    @contador_barcos = 0
   end
 
   def get_tablero()
   	return @tablero.get_tablero
+  end
+
+  def get_contador_barcos()
+    return @contador_barcos
   end
 
   def poner_barco(posX, posY, tipo_b, dir)
@@ -26,8 +31,10 @@ class Batalla_naval
     if @tablero.get_tablero[[posX, posY]] == "libre"
       return "agua"
     else
+      id_barco = @tablero.get_tablero[[posX, posY]]
       @tablero.get_tablero[[posX, posY]] = "libre"
-      return "acierto"
+
+      return @tablero.barco_hundido(id_barco)
     end
   end 
 
@@ -36,10 +43,11 @@ class Batalla_naval
       for i in 0..4
       #tengo que iterar eficientemente
       if (posX <= i) and ( i < posX+tamanio)
-         @tablero.ocupar_celda(i, posY)
+         @tablero.ocupar_celda(i, posY, @contador_barcos)
       end
       #horrible mejorar!!
     end
+    @contador_barcos = @contador_barcos + 1
   end
 
   def poner_barco_vertical(posX, posY, tipo_b)
@@ -47,10 +55,11 @@ class Batalla_naval
     for i in 0..4
       #tengo que iterar eficientemente
       if (posY <= i) and ( i < posY+tamanio)
-        @tablero.ocupar_celda(posX, i)
+        @tablero.ocupar_celda(posX, i, get_contador_barcos())
       end
          #horrible mejorar!!
     end
+    @contador_barcos = @contador_barcos + 1
   end
 
 #por ahora si digo horizontal es para arriba y vertical para la derecha
@@ -80,7 +89,7 @@ class Batalla_naval
      #tengo que iterar eficientemente
       if (posX <= i) and (i < posX+tamanio)
         f = @tablero.get_pos(i, posY) 
-          if f == "ocupado"
+          if f != "libre"
            return false
           end
      #horrible mejorar!!
@@ -94,7 +103,7 @@ class Batalla_naval
       #tengo que iterar eficientemente
       if (posY<=i) and ( i <posY+tamanio)
         f = @tablero.get_pos(posX, i) 
-          if f == "ocupado"
+          if f != "libre"
               return false
           end
          #horrible mejorar!!

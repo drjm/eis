@@ -9,8 +9,8 @@ When(/^ubico un crucero en forma horizontal$/) do
 end
 
 Then(/^posiciono el barco en el tablero$/) do
-  expect(@batalla.get_tablero[[0,0]]).to eq "ocupado"
-  expect(@batalla.get_tablero[[1,0]]).to eq "ocupado"
+  expect(@batalla.get_tablero[[0,0]]).to eq 0
+  expect(@batalla.get_tablero[[1,0]]).to eq 0
 end
 
 Given(/^en la posicion (\d+) (\d+) esta ocupada$/) do |arg1, arg2|
