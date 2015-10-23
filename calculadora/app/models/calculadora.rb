@@ -25,4 +25,8 @@ class Calculadora
   	@cantidad_operaciones = @cantidad_operaciones+1
     return (op_1 + op_2)/2
   end
+
+  def resetear_memoria()
+    @cantidad_operaciones = 0
+  end
 end

@@ -3,6 +3,9 @@ class Calculadora
     @cantidad_operaciones = 0
   end
 
+  def set_cantidad_operaciones(n)
+    @cantidad_operaciones = n
+  end
 
   def get_cantidad_operaciones
     return @cantidad_operaciones

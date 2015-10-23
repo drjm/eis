@@ -22,4 +22,15 @@ describe 'Calculadora' do
     
     expect(@calculadora.promedio(10, 2)).to eq 6
   end
+
+  it 'opero 3 veces y cantidad de operaciones deberia dar 3' do
+    @calculadora = Calculadora.new
+    @calculadora.promedio(10, 2)
+    @calculadora.promedio(10, 2)
+    @calculadora.promedio(10, 2)
+    expect(@calculadora.get_cantidad_operaciones).to eq 3
+  end
+
+
+
 end

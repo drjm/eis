@@ -31,6 +31,15 @@ describe 'Calculadora' do
     expect(@calculadora.get_cantidad_operaciones).to eq 3
   end
 
+  it 'opero 3 veces y reseteo' do
+    @calculadora = Calculadora.new
+    @calculadora.promedio(10, 2)
+    @calculadora.promedio(10, 2)
+    @calculadora.promedio(10, 2)
+    @calculadora.resetear_memoria
+    expect(@calculadora.get_cantidad_operaciones).to eq 0
+  end
+
 
 
 end
