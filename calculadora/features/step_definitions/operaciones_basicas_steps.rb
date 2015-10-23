@@ -32,4 +32,21 @@ Then(/^el resultad es (\d+)$/) do |arg1|
   expect(page).to have_content(0)
 end
 
+Given(/^un operan es (\d+)$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^otro operan es (\d+)$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^los promedio$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^el resulta es (\d+)$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+
 

@@ -16,4 +16,10 @@ describe 'Calculadora' do
     
     expect(@calculadora.restar(2, 2)).to eq 0
   end
+
+  it 'deberia promediar 10,2 y dar 6' do
+    @calculadora = Calculadora.new
+    
+    expect(@calculadora.promedio(10, 2)).to eq 6
+  end
 end

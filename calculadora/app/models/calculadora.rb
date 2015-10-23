@@ -12,4 +12,9 @@ class Calculadora
   	@cantidad_operaciones = @cantidad_operaciones+1
     return op_1 - op_2
   end
+
+  def promedio(op_1, op_2)
+  	@cantidad_operaciones = @cantidad_operaciones+1
+    return (op_1 + op_2)/2
+  end
 end

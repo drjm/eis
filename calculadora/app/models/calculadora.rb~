@@ -7,4 +7,9 @@ class Calculadora
   	@cantidad_operaciones = @cantidad_operaciones+1
     return op_1 + op_2
   end
+
+  def restar(op_1, op_2)
+  	@cantidad_operaciones = @cantidad_operaciones+1
+    return op_1 - op_2
+  end
 end
