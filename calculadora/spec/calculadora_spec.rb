@@ -10,4 +10,10 @@ describe 'Calculadora' do
     
     expect(@calculadora.sumar(1, 1)).to eq 2
   end
+
+  it 'deberia restar 2-2 y dar 0' do
+    @calculadora = Calculadora.new
+    
+    expect(@calculadora.restar(2, 2)).to eq 0
+  end
 end

@@ -15,3 +15,20 @@ Then(/^el resultado es (\d+)$/) do |arg1|
   expect(page).to have_content(3)
 end
 
+Given(/^un operand es (\d+)$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^otro operand es (\d+)$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^los resto$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^el resultad es (\d+)$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+
