@@ -33,20 +33,22 @@ Then(/^el resultad es (\d+)$/) do |arg1|
 end
 
 Given(/^un operan es (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  visit 'calculadora'
+  fill_in 'op_1', with: 10
 end
 
 Given(/^otro operan es (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in 'op_2', with: 2
 end
 
 When(/^los promedio$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button('Promediar')
 end
 
 Then(/^el resulta es (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(6)
 end
+
 
 
 

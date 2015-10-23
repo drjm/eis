@@ -11,6 +11,8 @@
       <label>Operando 2</label>
       <input id="op_2" type="text" name="op_2"><br>
       <button type="submit" name="suma"> Sumar </button>
+      <button type="submit" name="restar"> Restar </button>
+      <button type="submit" name="promedio"> Promediar </button>
     </form>
   <label>Resultado</label>
       <%= @resultado %>

@@ -31,10 +31,13 @@ module Ejemplo
       @op_2 = params[:op_2]
       if(params[:suma])
       	res = @calculadora.sumar(@op_1.to_i, @op_2.to_i)
-	  else
-		res = @calculadora.restar(@op_1.to_i, @op_2.to_i)
       end
-      
+      if(params[:resta])
+      	res = @calculadora.restar(@op_1.to_i, @op_2.to_i)
+      end
+      if(params[:promedio])
+      	res = @calculadora.promedio(@op_1.to_i, @op_2.to_i)
+      end
       @resultado = res
       render 'calculadora'
     end
