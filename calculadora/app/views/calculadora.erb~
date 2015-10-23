@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form method="POST" action="saludo">
+      <%= csrf_token_field %>
+      <label>Operando 1</label>
+      <input id="op_1" type="text" name="op_1"><br>
+      <label>Operando 2</label>
+      <input id="op_2" type="text" name="op_2"><br>
+      <button type="submit" name="suma"> Sumar </button>
+    </form>
+  <label>Resultado</label>
+      <%= @resultado %>
+  <br>
+  </body>
+</html>

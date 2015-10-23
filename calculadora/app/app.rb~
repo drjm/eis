@@ -15,14 +15,14 @@ module Ejemplo
       render 'saludo'
     end
 
+    get 'calculadora' do
+      render 'calculadora'
+    end
+
     post 'saludo' do
       session[:nombre] = params[:nombre]
       @nombre = session[:nombre]
       render 'saludo'
-    end
-
-    get 'calculadora' do
-      render 'calculadora'
     end
 
     post 'calculadora' do
