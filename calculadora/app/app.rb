@@ -29,7 +29,11 @@ module Ejemplo
       @calculadora = Calculadora.new
       @op_1 = params[:op_1]
       @op_2 = params[:op_2]
-      res = @calculadora.sumar(@op_1.to_i, @op_2.to_i)
+      if(params[:suma])
+      	res = @calculadora.sumar(@op_1.to_i, @op_2.to_i)
+	  else
+		res = @calculadora.restar(@op_1.to_i, @op_2.to_i)
+      end
       @resultado = res
       render 'calculadora'
     end
