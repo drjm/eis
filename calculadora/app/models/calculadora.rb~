@@ -3,6 +3,11 @@ class Calculadora
     @cantidad_operaciones = 0
   end
 
+
+  def get_cantidad_operaciones
+    return @cantidad_operaciones
+  end
+
   def sumar(op_1, op_2)
   	@cantidad_operaciones = @cantidad_operaciones+1
     return op_1 + op_2

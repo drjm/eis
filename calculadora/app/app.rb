@@ -22,6 +22,8 @@ module Ejemplo
     end
 
     get 'calculadora' do
+      @n_operaciones = params[:n_operaciones].to_i
+      session[:n_operaciones] = @n_operaciones
       render 'calculadora'
     end
 
@@ -29,6 +31,7 @@ module Ejemplo
       @calculadora = Calculadora.new
       @op_1 = params[:op_1]
       @op_2 = params[:op_2]
+      @calculadora.set_cantidad_operaciones(session[:n_operaciones])
       if(params[:sumar])
       	res = @calculadora.sumar(@op_1.to_i, @op_2.to_i)
       end
@@ -39,6 +42,8 @@ module Ejemplo
       	res = @calculadora.promedio(@op_1.to_i, @op_2.to_i)
       end
       @resultado = res
+      @n_operaciones = @calculadora.get_cantidad_operaciones()
+      session[:n_operaciones] = @n_operaciones
       render 'calculadora'
     end
 
