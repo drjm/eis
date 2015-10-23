@@ -17,7 +17,7 @@
   <label>Resultado</label>
       <%= @resultado %>
   <br>
-  <label>Cantidad Operacions </label>
+  <label>Cantidad Operaciones </label>
     <%= @n_operaciones %>
   <br>
   </body>

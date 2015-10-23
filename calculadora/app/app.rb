@@ -41,6 +41,9 @@ module Ejemplo
       if(params[:promedio])
       	res = @calculadora.promedio(@op_1.to_i, @op_2.to_i)
       end
+      if(params[:reset])
+      	res = @calculadora.resetear_memoria()
+      end
       @resultado = res
       @n_operaciones = @calculadora.get_cantidad_operaciones()
       session[:n_operaciones] = @n_operaciones
